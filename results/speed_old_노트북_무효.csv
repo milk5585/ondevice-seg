@@ -1,2 +1,0 @@
-date,name,backend,model_file,size,mode,input_hw,threads,warmup,runs,median_ms,mean_ms,p90_ms,std_ms,fps,model_mb,cpu,torch
-2026-10-05 21:46,baseline_fp32,torch,,520,short,520x710,4,20,200,5801.48,6348.89,9239.69,1855.90,0.17,151.5,"Intel64 Family 6 Model 170 Stepping 4, GenuineIntel",2.14.0+cpu
