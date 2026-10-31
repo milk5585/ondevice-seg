@@ -74,6 +74,10 @@ def main():
             for name, onnx, size in ALL:
                 subprocess.run([sys.executable, __file__, "--name", f"{name}_m{r+1}", "--onnx", onnx,
                                 "--size", str(size), "--threads", str(args.threads)], check=True, cwd=ROOT)
+    elif args.repeat > 1:  # 한 모델을 여러 번: 매번 새 프로세스로 (README의 --repeat 3)
+        for r in range(args.repeat):
+            subprocess.run([sys.executable, __file__, "--name", f"{args.name}_m{r+1}", "--onnx", args.onnx,
+                            "--size", str(args.size), "--mode", args.mode, "--threads", str(args.threads)], check=True, cwd=ROOT)
     else:
         measure(args.name, args.onnx, args.size, args.mode, args.threads)
 
