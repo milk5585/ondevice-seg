@@ -1,0 +1,7 @@
+date,model,backend,mode,canvas_hw,split,n_images,miou_person,iou_person,biou_person,miou21,sec_per_img
+2026-10-15 14:53,os8,onnx,square,384x384,val,1449,93.84,88.38,53.72,75.57,1.001
+2026-10-15 15:22,os8,onnx,letterbox,384x384,val,1449,93.42,87.59,52.27,76.10,1.210
+2026-10-15 15:53,os8,onnx,letterbox,384x512,val,1449,94.08,88.82,55.80,77.41,1.274
+2026-10-15 16:16,os16r6,onnx,square,384x384,val,1449,91.27,83.56,38.91,71.61,0.964
+2026-10-15 16:38,os16r6,onnx,letterbox,384x384,val,1449,90.28,81.68,36.65,70.95,0.897
+2026-10-15 17:00,os16r6,onnx,letterbox,384x512,val,1449,91.57,84.10,41.26,73.20,0.932

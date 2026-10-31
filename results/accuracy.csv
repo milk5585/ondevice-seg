@@ -1,0 +1,15 @@
+date,name,backend,model_file,size,mode,split,n_images,miou_person,iou_person,biou_person,miou21,model_mb,sec_per_img
+2026-09-30 13:05,smoke,torch,,520,short,val,50,97.45,95.39,,76.64,,4.899
+2026-10-05 00:33,smoke_biou,torch,,520,short,val,20,98.37,97.00,68.73,63.61,,6.684
+2026-10-05 19:24,baseline_fp32,torch,,520,short,val,1449,94.51,89.63,59.08,77.84,,11.156
+2026-10-14 10:18,os8_384_fp32,onnx,models/os8_fp32.onnx,384,short,val,50,96.86,94.32,63.20,75.40,151.4,0.823
+2026-10-14 10:49,os8_384_fp32,onnx,models/os8_fp32.onnx,384,short,val,1449,94.34,89.33,56.98,77.75,151.4,1.202
+2026-10-14 11:07,os8_384_int8_pc,onnx,models/os8_int8_perchannel.onnx,384,short,val,1449,94.33,89.30,56.89,77.68,38.5,0.750
+2026-10-14 11:27,os8_384_int8_pt,onnx,models/os8_int8_pertensor.onnx,384,short,val,1449,94.26,89.17,56.88,77.73,38.2,0.862
+2026-10-14 11:50,os16r6_384_fp32,onnx,models/os16r6_fp32.onnx,384,short,val,1449,92.38,85.64,44.06,74.22,151.4,0.938
+2026-10-14 12:11,os16r6_384_int8_pc,onnx,models/os16r6_int8_perchannel.onnx,384,short,val,1449,92.34,85.57,44.01,74.21,38.5,0.856
+2026-10-14 12:31,os16r6_384_int8_pt,onnx,models/os16r6_int8_pertensor.onnx,384,short,val,1449,92.29,85.46,43.95,74.23,38.2,0.834
+2026-10-15 20:42,os8_int8_pc_top1,onnx,models/os8_int8_perchannel_top1.onnx,384,short,val,1449,94.35,89.34,57.03,77.54,38.6,0.782
+2026-10-15 21:00,os8_int8_pc_top2,onnx,models/os8_int8_perchannel_top2.onnx,384,short,val,1449,94.34,89.32,56.98,77.43,38.6,1.007
+2026-10-15 21:21,os8_520_fp32,onnx,models/os8_fp32.onnx,520,short,val,1449,94.51,89.63,59.08,77.84,151.4,1.552
+2026-10-15 21:22,os8_int8_pc_top3,onnx,models/os8_int8_perchannel_top3.onnx,384,short,val,1449,94.31,89.27,56.92,77.60,38.6,0.914

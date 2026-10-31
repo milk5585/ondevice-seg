@@ -1,0 +1,8 @@
+date,fp32_model,int8_model,mode,calib_list,n_calib,size,resize_mode,format,act_type,weight_type,calib_method,n_excluded,fp32_mb,int8_mb,ratio,sec,onnxruntime
+2026-10-14 10:36,os8_fp32.onnx,os8_int8_pertensor.onnx,pertensor,calib_train_person300.txt,300,384,short,QDQ,U8,S8,MinMax,0,151.4,38.2,3.97,202,1.30.0
+2026-10-14 10:40,os8_fp32.onnx,os8_int8_perchannel.onnx,perchannel,calib_train_person300.txt,300,384,short,QDQ,U8,S8,MinMax,0,151.4,38.5,3.93,212,1.30.0
+2026-10-14 10:41,os16r6_fp32.onnx,os16r6_int8_pertensor.onnx,pertensor,calib_train_person300.txt,300,384,short,QDQ,U8,S8,MinMax,0,151.4,38.2,3.97,85,1.30.0
+2026-10-14 10:43,os16r6_fp32.onnx,os16r6_int8_perchannel.onnx,perchannel,calib_train_person300.txt,300,384,short,QDQ,U8,S8,MinMax,0,151.4,38.5,3.93,80,1.30.0
+2026-10-15 20:18,os8_fp32.onnx,os8_int8_perchannel_top1.onnx,perchannel,calib_train_person300.txt,300,384,short,QDQ,U8,S8,MinMax,1,151.4,38.6,3.93,627,1.30.0
+2026-10-15 20:27,os8_fp32.onnx,os8_int8_perchannel_top2.onnx,perchannel,calib_train_person300.txt,300,384,short,QDQ,U8,S8,MinMax,2,151.4,38.6,3.92,524,1.30.0
+2026-10-15 20:34,os8_fp32.onnx,os8_int8_perchannel_top3.onnx,perchannel,calib_train_person300.txt,300,384,short,QDQ,U8,S8,MinMax,3,151.4,38.6,3.92,438,1.30.0

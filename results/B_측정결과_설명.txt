@@ -1,0 +1,11 @@
+B 측정 결과 (2026-10-15, 기준 PC = 학과 PC i9-12900, Windows 11 Home 26200.9711)
+
+speed.csv        속도. 보고서 값은 이름 끝이 _r1/_r2/_r3 인 3줄의 median_ms 중앙값
+                 (9개 모델을 번갈아 3라운드, ONNX Runtime 1.30.0, 4스레드, warmup 20 + 200회)
+                 앞쪽 줄: 10/07 PyTorch 측정, 10/15 단발 측정(참고용)
+memory.csv       추론 메모리. infer_peak_mb = 로드 전 대비 추론 중 최대 증가분, _m1~_m3 3회 중앙값 사용
+fixed_input.csv  고정 입력 정확도 (본선 Hailo 대비). FP32 ONNX, VOC val 1449장
+os_resolution.csv  구조 탐색 12조합 정확도 (OS8/16 x 해상도 4개, PyTorch)
+pc_ver.txt       기준 PC Windows 버전
+
+측정 코드: B_학과PC_측정.zip (run_all_B.bat, mem_onnx.py, mem_usage.py, fixed_input_eval.py)

@@ -2,3 +2,9 @@ venv/
 __pycache__/
 data/
 *.pyc
+*.onnx
+*.pth
+out_*.png
+*.log
+*.jpg
+results/backup_*/

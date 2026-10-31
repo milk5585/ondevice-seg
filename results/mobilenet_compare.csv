@@ -1,0 +1,5 @@
+date,model,size,split,n_images,miou_person,iou_person,biou_person,miou21,sec_per_img
+2026-10-15 20:30,deeplabv3_mbv3,520,val,1449,91.36,83.72,46.48,72.69,1.642
+2026-10-15 21:09,deeplabv3_mbv3,384,val,1449,91.48,83.96,45.96,72.63,1.621
+2026-10-15 21:30,lraspp_mbv3,520,val,1449,91.08,83.20,47.00,70.63,0.858
+2026-10-15 21:48,lraspp_mbv3,384,val,1449,91.50,83.98,46.89,71.73,0.765
