@@ -8,7 +8,10 @@
 ※ 프로파일링 자체가 약간 느리게 만들므로 '절대 시간'이 아니라 '비중'을 본다. 속도 숫자는 bench_speed.py 값을 쓴다.
 
     python extra_profile_ops.py      # → results/op_profile.csv, results/op_counts.csv
+    python extra_profile_ops.py --tag gap --models os8_384_int8_pc=models/os8_int8_perchannel.onnx os8gap_384_int8_pc=models/os8gap_int8_perchannel.onnx
+                                     # → results/op_profile_gap.csv, results/op_counts_gap.csv
 """
+import argparse
 import csv
 import json
 import os
@@ -30,6 +33,12 @@ THREADS, WARMUP, RUNS = 4, 20, 50
 
 
 def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--models", nargs="+", help="이름=경로 (기본: FP32 vs INT8 per-channel)")
+    ap.add_argument("--tag", default="", help="결과 파일 이름 뒤에 붙일 표시")
+    args = ap.parse_args()
+    models = [tuple(a.split("=", 1)) for a in args.models] if args.models else MODELS
+    sfx = f"_{args.tag}" if args.tag else ""
     disable_efficiency_mode()
     mode, ac = windows_power_info()
     print(f"전원 모드: {mode} / 충전기: {ac}")
@@ -38,7 +47,7 @@ def main():
     x = preprocess(load_image(read_ids("val")[0]), 384, "short")
     RES.mkdir(exist_ok=True)
     prof_rows, count_rows = [], []
-    for name, path in MODELS:
+    for name, path in models:
         so = ort.SessionOptions()
         so.intra_op_num_threads = THREADS
         so.inter_op_num_threads = 1
@@ -86,15 +95,15 @@ def main():
                 print(f"    {op:28s} 노드 {len(nodes[op]):3d}개  {ms:7.2f} ms  {100*us/total:5.1f}%")
         os.remove(prof)
 
-    with open(RES / "op_profile.csv", "w", newline="", encoding="utf-8") as f:
+    with open(RES / f"op_profile{sfx}.csv", "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
         w.writerow(["model", "op_type", "n_nodes", "ms_per_run", "share_pct"])
         w.writerows(prof_rows)
-    with open(RES / "op_counts.csv", "w", newline="", encoding="utf-8") as f:
+    with open(RES / f"op_counts{sfx}.csv", "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
         w.writerow(["model", "op_type", "count"])
         w.writerows(count_rows)
-    print("저장: results/op_profile.csv, results/op_counts.csv")
+    print(f"저장: results/op_profile{sfx}.csv, results/op_counts{sfx}.csv")
 
 
 if __name__ == "__main__":

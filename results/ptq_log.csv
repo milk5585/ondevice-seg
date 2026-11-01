@@ -6,3 +6,4 @@ date,fp32_model,int8_model,mode,calib_list,n_calib,size,resize_mode,format,act_t
 2026-10-15 20:18,os8_fp32.onnx,os8_int8_perchannel_top1.onnx,perchannel,calib_train_person300.txt,300,384,short,QDQ,U8,S8,MinMax,1,151.4,38.6,3.93,627,1.30.0
 2026-10-15 20:27,os8_fp32.onnx,os8_int8_perchannel_top2.onnx,perchannel,calib_train_person300.txt,300,384,short,QDQ,U8,S8,MinMax,2,151.4,38.6,3.92,524,1.30.0
 2026-10-15 20:34,os8_fp32.onnx,os8_int8_perchannel_top3.onnx,perchannel,calib_train_person300.txt,300,384,short,QDQ,U8,S8,MinMax,3,151.4,38.6,3.92,438,1.30.0
+2026-11-01 18:57,os8gap_fp32.onnx,os8gap_int8_perchannel.onnx,perchannel,calib_train_person300.txt,300,384,short,QDQ,U8,S8,MinMax,0,151.4,38.5,3.93,161,1.30.0

@@ -13,3 +13,4 @@ date,name,backend,model_file,size,mode,split,n_images,miou_person,iou_person,bio
 2026-10-15 21:00,os8_int8_pc_top2,onnx,models/os8_int8_perchannel_top2.onnx,384,short,val,1449,94.34,89.32,56.98,77.43,38.6,1.007
 2026-10-15 21:21,os8_520_fp32,onnx,models/os8_fp32.onnx,520,short,val,1449,94.51,89.63,59.08,77.84,151.4,1.552
 2026-10-15 21:22,os8_int8_pc_top3,onnx,models/os8_int8_perchannel_top3.onnx,384,short,val,1449,94.31,89.27,56.92,77.60,38.6,0.914
+2026-11-01 19:26,os8gap_384_int8_pc,onnx,models/os8gap_int8_perchannel.onnx,384,short,val,1449,94.33,89.30,56.89,77.68,38.5,0.707
