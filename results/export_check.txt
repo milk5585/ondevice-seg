@@ -1,0 +1,3 @@
+# torch 2.14.0+cpu / onnx 1.23.1 / onnxruntime 1.30.0
+2026-10-14 10:17 | os8 | os8_fp32.onnx | 151.4MB | opset 18 (dynamo) | 입력 dynamic | VOC val_person 앞 5장 @384 + 1장 @520 | 최대 오차 3.27e-05 | 픽셀 클래스 일치 99.9999% | OK
+2026-10-14 10:17 | os16_r6 | os16r6_fp32.onnx | 151.4MB | opset 18 (dynamo) | 입력 dynamic | VOC val_person 앞 5장 @384 + 1장 @520 | 최대 오차 4.48e-05 | 픽셀 클래스 일치 100.0000% | OK
